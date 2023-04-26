@@ -241,23 +241,23 @@
             <h2 class="section-title">Work</h2>
 
             <div class="work__container bd-grid">
-                <a href="" class="work__img">
-                    <img src="assets/img/viz3.png" alt="">
+                <a href="https://lcommerce.net/" class="work__img">
+                    <img src="assets/img/ecommerce.jpg" alt="">
+                </a>
+                <a href="https://musicmart2.netlify.app/" class="work__img">
+                    <img src="assets/img/music.jpg" alt="">
+                </a>
+                <a href="https://fly-right-nine.vercel.app/" class="work__img">
+                    <img src="assets/img/fly.jpg" alt="">
+                </a>
+                <a href="https://capstonehotels.vercel.app/" class="work__img">
+                    <img src="assets/img/hotel.jpg" alt="">
                 </a>
                 <a href="" class="work__img">
-                    <img src="assets/img/viz4.png" alt="">
+                    <img src="assets/img/hospital.jpg" alt="">
                 </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/viz5.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/viz1.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/viz2.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/crc.png" alt="">
+                <a href="https://onyedikabenjamin.github.io/Guess-Gladiator/" class="work__img">
+                    <img src="assets/img/guess.jpg" alt="">
                 </a>
             </div>
         </section>
@@ -271,19 +271,19 @@
                 <div class="grid">
                     <div class="card">
                         <div class="card_img">
-                            <img src="assets/img/block.webp" alt="">
+                            <img src="assets/img/ecommerce2.jpg" alt="">
                         </div>
                         <div class="card_body">
                             <h2 class="card_title">Blockchain and Machine Learning</h2>
                             <p>A helpful tutorial I wrote recently on usage of Machine learning in Blockchain
                                 technology. </p>
 
-                            <a href="blog.html" class="read_more">Read article</a>
+                            <a href="blog.html" class="read_more">View Project</a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card_img">
-                            <img src="assets/img/drug.webp" alt="">
+                            <img src="assets/img/music2.jpg" alt="">
                         </div>
                         <div class="card_body">
                             <h2 class="card_title">Drug Development Using AI</h2>
@@ -291,19 +291,18 @@
                                 Intelligence. </p>
 
                             <a href="https://medium.com/@gokusenset1/drug-discovery-and-development-using-artificial-intelligence-58e14dbbd729?source=friends_link&sk=af1960c6ecebb0737554e0b12ed9a9e9"
-                                class="read_more">Read article</a>
+                                class="read_more">View Project</a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card_img">
-                            <img src="assets/img/data2.webp" alt="">
+                            <img src="assets/img/airline.jpg" alt="" height="1000px">
                         </div>
                         <div class="card_body">
-                            <h2 class="card_title">DataOps for Data Analysts</h2>
-                            <p>A helpful tutorial I wrote recently on DataOps usage in Data Analytics Field.</p>
-
+                            <h2 class="card_title">An Airline System</h2>
+                            <p>A dynamic application I built recently using JavaScipt and ReactJs</p>
                             <a href="https://medium.com/@gokusenset1/dataops-for-data-analysts-79c659d91065?source=friends_link&sk=b077e5ae7fb623d926228aa21d49917d"
-                                class="read_more">Read article</a>
+                                class="read_more">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -317,12 +316,11 @@
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <form action="https://formsubmit.co/sivamsinghsh@email.com" method="POST" class="contact__form">
-                    <!--                    <form action="" class="contact__form">-->
-                    <input type="text" placeholder="Name" class="contact__input" name="name" required>
-                    <input type="email" placeholder="Email" class="contact__input" name="email" required>
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="submit" value="Submit" class="contact__button button">
+                <form method="post" class="contact__form" onsubmit="sendEmail(); reset(); return false">
+                    <input type="text" id="name" placeholder="Name" class="contact__input" name="name" required>
+                    <input type="email" id="email" placeholder="Email" class="contact__input" name="email" required>
+                    <textarea name="" id="message" cols="0" rows="10" class="contact__input"></textarea>
+                    <input type="submit" id="submit" value="Submit" class="contact__button button">
                 </form>
             </div>
         </section>
@@ -340,16 +338,30 @@
         <p class="footer__copy">&#169; Benjamin Udegbunam. All rigths reserved</p>
     </footer>
 
-
-
-    </footer>
-
     </div>
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        const submit_btn = document.getElementById('submit');
+        submit_btn.addEventListener('click', function () {
+                    let name = document.getElementById('name').value;
+                    let email = document.getElementById('email').value;
+                    let message = document.getElementById('message').value;
+
+                    Email.send({
+                        SecureToken: "0f2ecc47-f026-442b-97a8-2a13b7139463",
+                        To: 'udegbunamonyedikabenjamin@gmail.com',
+                        From: "digeratees@gmail.com",
+                        Subject: "This is the subject",
+                        Body: "And this is the body"
+                    }).then(
+                        message => alert(message)
+                    );
+    </script>
 </body>
 
 </html>
