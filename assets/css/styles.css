@@ -275,6 +275,28 @@ img {
   border-radius: .5rem;
   justify-self: center;
 }
+
+
+.about__img {
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+.about__img img {
+  transition: 1s;
+}
+
+.about__img img:hover {
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
 .about_text_img{
   width: 70px;
   margin-bottom: 20px;
